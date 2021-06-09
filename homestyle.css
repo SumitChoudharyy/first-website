@@ -1,4 +1,5 @@
 body {
+  background-color: #e8d4a9;
   margin: 0px;
   padding: 0px;
 }
@@ -11,11 +12,12 @@ header {
   background-position: bottom;
   height: 100vh;
   max-width: 100%;
-  border: 1px solid #fff;
+  overflow: hidden;
 }
 .container {
   display: grid;
   grid-template-rows: 1fr 6fr;
+  overflow: hidden;
 }
 .name span{
   color: #fff;
@@ -61,6 +63,7 @@ header {
   color: #fff;
   font-family: sans-serif;
   font-weight: bolder;
+  overflow: hidden;
   font-size: 18px;
 }
 .navbar a:hover{
@@ -68,6 +71,49 @@ header {
   border-radius: 10px;
   background-color: #fff;
   transition: 300ms;
+}
+.carousel{
+  overflow: hidden;
+  max-width: 600px;
+  position: relative;
+}
+.carousel .carousel_item,
+.carousel .carousel_item--hidden{
+  display: none;
+}
+.carousel_item{
+  height: 300px;
+  border: 1px solid black;
+}
+.carousel .carousel_item img{
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+.carousel .carousel_item--visible{
+  display: block;
+}
+.carousel .carousel_actions{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.carousel .carousel_actions button{
+  border: none;
+  font-size: 50px;
+  background: transparent;
+  cursor: pointer;
+  color: white;
+  font-family: monospace;
+}
+.carousel .carousel_actions button#carousel_button--prev{
+  margin-left: 20px;
+}
+.carousel .carousel_actions button#carousel_button--next{
+  margin-right: 20px;
 }
 @media (max-width: 1050px) and (min-width: 950px) {
   .name span{
